@@ -80,7 +80,9 @@ with open(file_to_save, "w") as txt_file:
         # Print the candidate name and percentage of votes.
         #print(f"{candidate}: received {vote_percentage:.1f}% of the vote")
 
-        #print(f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
+        candidate_results = (f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+        txt_file.write(candidate_results)
 
         # Determine winning vote count and candidate.
         # Determine if the votes are greater than the winning count.
@@ -99,6 +101,8 @@ with open(file_to_save, "w") as txt_file:
         f"Winning Vote Count: {winning_count:,}\n"
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"-------------------------\n")
+
+    txt_file.write(winning_candidate_summary)
 
     #print(winning_candidate_summary)
 
